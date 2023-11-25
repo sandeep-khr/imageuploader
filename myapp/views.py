@@ -15,13 +15,12 @@ def home(request):
     context = {'form':form, 'img':img}
     return render(request, 'myapp/home.html', context)
 
-
 def delete_image(request, image_id):
     image = get_object_or_404(Image, id=image_id)
     
     # if request.method == 'POST':
     image.delete()
-        # return redirect('home')
+    # return redirect('home')
     
     return redirect('home')
     # return render(request, 'myapp/delete_image.html', {'image': image})
